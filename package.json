@@ -9,7 +9,7 @@
     "dev": "yarn run build && yarn run start"
   },
   "keywords": [],
-  "author": "Matt and Sean",
+  "author": "Matt",
   "license": "ISC",
   "private": false,
   "devDependencies": {
