@@ -1,0 +1,19 @@
+{
+  "name": "aoc2021",
+  "version": "1.0.0",
+  "description": "The beginning",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn tsc -p .",
+    "start": "yarn node dist/index.js",
+    "dev": "yarn run build && yarn run start"
+  },
+  "keywords": [],
+  "author": "Matt and Sean",
+  "license": "ISC",
+  "private": false,
+  "devDependencies": {
+    "tsc": "^2.0.3",
+    "typescript": "^4.5.4"
+  }
+}
