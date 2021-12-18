@@ -1,6 +1,19 @@
 import Router from '@koa/router';
 import Joi from 'joi';
 
+const partTwo = (depths: number[]): number => {
+    let numberOfIncreasedDepths = 0;
+    for (let i = 0; i < depths.length - 3; i++) {
+        const previousWindow = depths[i] + depths[i + 1] + depths [i + 2];
+        const currentWindow = depths[i + 1] + depths[i + 2] + depths [i + 3];
+        if (currentWindow > previousWindow) {
+            numberOfIncreasedDepths++;
+        }
+    }
+    console.log(`${numberOfIncreasedDepths} Depth Increases`)
+    return numberOfIncreasedDepths;
+}
+
 const partOne = (depths: number[]): number => {
     let numberOfIncreasedDepths = 0;
     for (let i = 1; i < depths.length; i++) {
@@ -10,10 +23,6 @@ const partOne = (depths: number[]): number => {
     }
     return numberOfIncreasedDepths;
 }
-
-// const partTwo = (): number => {
-//
-// }
 
 // request validator
 const request = Joi.object({
@@ -38,8 +47,18 @@ router.post('/part-one', (ctx, next) => {
     return;
 });
 
-router.post('part-two', (ctx, next) => {
+router.post('/part-two', (ctx, next) => {
+    const result = request.validate(ctx.request.body);
+    if(result.error != undefined) {
+        ctx.status = 400;
+        ctx.body = 'unexpected payload';
+        return;
+    }
 
+    const depths: number[] = ctx.request.body?.input;
+    ctx.status = 200;
+    ctx.body = partTwo(depths);
+    return;
 });
 
 export default router;
