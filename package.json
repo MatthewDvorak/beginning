@@ -13,7 +13,24 @@
   "license": "ISC",
   "private": false,
   "devDependencies": {
+    "@types/joi": "^17.2.3",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^4.3.4",
+    "@types/koa-logger": "^3.1.2",
+    "@types/koa__router": "^8.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-typescript": "^16.1.0",
     "tsc": "^2.0.3",
     "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "joi": "^17.5.0",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.1.1"
   }
 }

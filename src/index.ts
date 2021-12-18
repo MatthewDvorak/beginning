@@ -1,13 +1,14 @@
-import {dayOneInputAoc as depths} from "./day-one-input-aoc";
+import Koa from 'koa';
+import bodyParser from 'koa-bodyparser';
+import logger from 'koa-logger';
 
-function dayOne() {
-    let numberOfIncreasedDepths = 0;
-    for (let i = 1; i < depths.length; i++){
-        if (depths[i]>depths[i - 1]){
-            numberOfIncreasedDepths = numberOfIncreasedDepths + 1;
-        }
-    }
-    console.log(numberOfIncreasedDepths);
-}
+import dayOne from './days/one/day-one';
 
-dayOne();
+const app = new Koa();
+app.use(bodyParser());
+app.use(logger());
+
+app.use(dayOne.routes());
+
+console.log('starting server on :3000');
+app.listen(3000);
