@@ -3,7 +3,7 @@ Typescript solutions to the advent of code
 - https://adventofcode.com/
 
 ## Days Complete:
-- [ ] Day One
+- [x] Day One
 - [ ] Day Two
 - [ ] Day Three
 
