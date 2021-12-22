@@ -4,7 +4,7 @@ Typescript solutions to the advent of code
 
 ## Days Complete:
 - [x] Day One
-- [ ] Day Two
+- [x] Day Two
 - [ ] Day Three
 
 ## Developer's Guide
